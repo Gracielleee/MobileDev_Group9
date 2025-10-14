@@ -1,6 +1,476 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".activity_main_fragment_notes">
+
+    <!-- Top black bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="30dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="App logo"
+            android:src="@drawable/unifime"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/white_notification"
+            android:contentDescription="Notifications"
+            android:scaleType="fitCenter"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/textViewNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Menu icon -->
+    <ImageView
+        android:id="@+id/menuIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/reorder"
+        android:contentDescription="Menu"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewNotes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/searchView" />
+
+    <!-- Search Bar -->
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="24dp"
+        android:queryHint="Name"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/edittext_bg"
+        app:layout_constraintStart_toEndOf="@id/menuIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewNotes"
+        android:layout_marginTop="12dp" />
+
+    <!-- Scrollable Grid of Notes -->
+    <ScrollView
+        android:id="@+id/noteScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="12dp"
+        android:fillViewport="true">
+
+        <GridLayout
+            android:id="@+id/noteGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="false"
+            android:rowOrderPreserved="false"
+            android:clipToPadding="false">
+
+            <!-- Note 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="@drawable/note_square_bg"
+                android:gravity="center_horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/kirby_flat"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/circle_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="potato, tomato, carrot"
+                    android:textSize="14sp"
+                    android:textColor="#444"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Likes"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#EAD9A8"
+                    android:textColor="@android:color/black"
+                    android:paddingHorizontal="8dp" />
+            </LinearLayout>
+
+            <!-- Note 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="@drawable/note_square_bg"
+                android:gravity="center_horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/kirby_flat"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/circle_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drink"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="anything orange-flavored"
+                    android:textSize="14sp"
+                    android:textColor="#444"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dislikes"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#EAD9A8"
+                    android:textColor="@android:color/black"
+                    android:paddingHorizontal="8dp" />
+            </LinearLayout>
+
+            <!-- Note 3 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="@drawable/note_square_bg"
+                android:gravity="center_horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/kirby_flat"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/circle_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dress"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Liked the orange dress"
+                    android:textSize="14sp"
+                    android:textColor="#444"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gift Idea"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#EAD9A8"
+                    android:textColor="@android:color/black"
+                    android:paddingHorizontal="8dp" />
+            </LinearLayout>
+
+            <!-- Note 4 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="@drawable/note_square_bg"
+                android:gravity="center_horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/kirby_flat"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/circle_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Song"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mambo no. 5, My Way"
+                    android:textSize="14sp"
+                    android:textColor="#444"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Likes"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#EAD9A8"
+                    android:textColor="@android:color/black"
+                    android:paddingHorizontal="8dp" />
+            </LinearLayout>
+
+            <!-- Note 5 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="@drawable/note_square_bg"
+                android:gravity="center_horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/kirby_flat"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/circle_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movie"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Liked animated films"
+                    android:textSize="14sp"
+                    android:textColor="#444"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favorites"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#EAD9A8"
+                    android:textColor="@android:color/black"
+                    android:paddingHorizontal="8dp" />
+            </LinearLayout>
+
+            <!-- Note 6 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="@drawable/note_square_bg"
+                android:gravity="center_horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/kirby_flat"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/circle_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hobby"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drawing and journaling"
+                    android:textSize="14sp"
+                    android:textColor="#444"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Interest"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#EAD9A8"
+                    android:textColor="@android:color/black"
+                    android:paddingHorizontal="8dp" />
+            </LinearLayout>
+
+        </GridLayout>
+    </ScrollView>
+
+    <!-- Floating Add Button -->
+    <ImageButton
+        android:id="@+id/addButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/add_icon_btn"
+        android:contentDescription="Add Note"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Bottom black bar -->
+    <View
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnContacts"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/contact_icon_btn"
+            android:contentDescription="Contacts"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/btnNotes"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/notes_icon_btn"
+            android:contentDescription="Notes"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/btnCalendar"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/calendar_icon_btn"
+            android:contentDescription="Calendar"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/btnTracker"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/tracker_icon_btn"
+            android:contentDescription="Tracker"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/btnMore"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/dots_icon_btn"
+            android:contentDescription="More"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
