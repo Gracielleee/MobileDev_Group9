@@ -8,6 +8,31 @@
     android:background="#FFF7E9"
     tools:context=".activity_main_fragment_notes">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/screen_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Search bar -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Notes"
+        android:layout_marginBottom="12dp" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -597,4 +622,5 @@
 
         </GridLayout>
     </ScrollView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
