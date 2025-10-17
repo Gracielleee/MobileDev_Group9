@@ -39,7 +39,7 @@ public class login_frame extends AppCompatActivity {
         loginButton.setOnClickListener(v -> {
             // Intent to move to the next frame
             Log.d("Button Click", "Create Account Button Clicked");
-            Intent intent = new Intent(login_frame.this, activity_main_frame.class);
+            Intent intent = new Intent(login_frame.this, main_login_frame.class);
             startActivity(intent);
         });
     }
