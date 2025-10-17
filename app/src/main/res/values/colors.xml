@@ -8,4 +8,7 @@
     <color name="primary">#EF9B62</color>
     <color name="primary_light">#FEBE86</color>
     <color name="contact_item_background">#FBFDFE</color>
+
+    <color name="light_blue">#86B2FE</color>
+
 </resources>
