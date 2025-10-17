@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:fillViewport="true"
     tools:context=".create_account_frame">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,31 +15,21 @@
         android:layout_height="wrap_content"
         android:padding="24dp">
 
-        <!-- Back Arrow -->
-
-        <ImageView
+        <!-- 🔙 Back Arrow -->
+        <ImageButton
             android:id="@+id/backArrow"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            app:srcCompat="@drawable/back_arrow"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <!-- Title -->
-
-        <TextView
-            android:id="@+id/alreadyAccountText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Already have an account? Login"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_margin="4dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Back"
+            android:scaleType="centerInside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/googleButtonContainer" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_arrow"
+            app:tint="#000000" />
 
+        <!-- 🏷️ Title -->
         <TextView
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
@@ -46,12 +37,13 @@
             android:text="Create account"
             android:textSize="26sp"
             android:textStyle="bold"
+            android:textColor="#000000"
             android:fontFamily="@font/poppins_bold"
-            app:layout_constraintTop_toBottomOf="@id/backArrow"
+            android:layout_marginTop="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp" />
+            app:layout_constraintTop_toBottomOf="@id/backArrow" />
 
-        <!-- Subtitle -->
+        <!-- 💬 Subtitle -->
         <TextView
             android:id="@+id/subTitleText"
             android:layout_width="wrap_content"
@@ -60,100 +52,116 @@
             android:textSize="14sp"
             android:textColor="#777777"
             android:fontFamily="@font/poppins_medium"
-            app:layout_constraintTop_toBottomOf="@id/titleText"
+            android:layout_marginTop="4dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="4dp" />
+            app:layout_constraintTop_toBottomOf="@id/titleText" />
 
-        <!-- Email -->
+        <!-- ✉️ Email -->
         <EditText
             android:id="@+id/emailField"
             android:layout_width="0dp"
             android:layout_height="55dp"
+            android:layout_marginTop="24dp"
             android:hint="example@gmail.com"
             android:inputType="textEmailAddress"
+            android:background="@drawable/edittext_bg"
             android:paddingStart="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#AAAAAA"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintTop_toBottomOf="@id/subTitleText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Password -->
+        <!-- 🔒 Password -->
         <EditText
             android:id="@+id/passwordField"
             android:layout_width="0dp"
             android:layout_height="55dp"
+            android:layout_marginTop="16dp"
             android:hint="Create password"
             android:inputType="textPassword"
+            android:background="@drawable/edittext_bg"
             android:paddingStart="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#AAAAAA"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintTop_toBottomOf="@id/emailField"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Confirm Password -->
+        <!-- 🔁 Confirm Password -->
         <EditText
             android:id="@+id/confirmPasswordField"
             android:layout_width="0dp"
             android:layout_height="55dp"
+            android:layout_marginTop="16dp"
             android:hint="Re-enter password"
             android:inputType="textPassword"
+            android:background="@drawable/edittext_bg"
             android:paddingStart="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#AAAAAA"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintTop_toBottomOf="@id/passwordField"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Terms and Conditions -->
+        <!-- ✅ Terms and Conditions -->
         <CheckBox
             android:id="@+id/termsCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="I agree to the Terms and Conditions"
             android:fontFamily="@font/poppins_medium"
             android:textSize="13sp"
             app:layout_constraintTop_toBottomOf="@id/confirmPasswordField"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Create Account Button -->
+        <!-- 🟥 Create Account Button -->
         <Button
             android:id="@+id/createAccountSubmit"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#fd5755"
+            android:elevation="3dp"
             android:text="Create account"
             android:textSize="18sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/poppins_medium"
+            android:layout_marginBottom="8dp"
             app:layout_constraintTop_toBottomOf="@id/termsCheckBox"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Or sign up with -->
+        <!-- 🔘 Divider Text -->
         <TextView
             android:id="@+id/orText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:text="or sign up with"
             android:textSize="14sp"
             android:textColor="#777777"
             android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
             app:layout_constraintTop_toBottomOf="@id/createAccountSubmit"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Social Buttons -->
+        <!-- 🟢 Google Sign-in -->
         <LinearLayout
             android:id="@+id/googleButtonContainer"
-            android:layout_width="172dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/orText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orText">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <ImageView
                 android:id="@+id/google_icon"
@@ -163,15 +171,46 @@
                 android:contentDescription="Google icon"
                 android:src="@drawable/google_icon" />
 
-            <Button
+            <TextView
                 android:id="@+id/googleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Google"
                 android:textColor="#000000"
                 android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- 🔗 Already have account + Link -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="70dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/googleButtonContainer"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/alreadyAccountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Already have an account? "
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/linkText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Login"
+                android:textColor="#2282C9"
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
