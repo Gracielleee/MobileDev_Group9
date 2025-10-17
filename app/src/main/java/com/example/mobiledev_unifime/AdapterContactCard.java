@@ -74,7 +74,6 @@ public class AdapterContactCard extends RecyclerView.Adapter<AdapterContactCard.
             cardImageView.setImageResource(item.getImageId());
 
             itemView.setOnClickListener(v -> {
-                Toast.makeText(itemView.getContext(), item.getName() + " clicked", Toast.LENGTH_SHORT).show();
                 if (listener != null) {
                     listener.onContactClick(item);
                 }

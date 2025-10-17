@@ -33,6 +33,9 @@
         <activity android:name=".ContactDetailActivity"
             android:exported="false"/>
 
+        <activity android:name=".activity_contact_view"
+            android:exported="false"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

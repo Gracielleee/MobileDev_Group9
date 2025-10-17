@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
-    android:backgroundTint="@color/white">
+    android:padding="18dp"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,14 +17,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Contacts"
-            android:textSize="24sp"/>
+            android:textColor="@android:color/black"
+            android:textSize="35sp"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginBottom="8dp" />
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_search_background"
             android:iconifiedByDefault="false"
-            android:queryHint="Name"/>
+            android:queryHint="Name"
+            android:layout_marginBottom="20dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_contactGroup"
@@ -42,14 +47,5 @@
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/kirby_flat"
-        android:contentDescription="Add"
-        android:layout_gravity="bottom|end"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
