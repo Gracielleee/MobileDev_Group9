@@ -1,0 +1,37 @@
+<!-- dialog_add_note.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="end"
+    android:background="@drawable/fab_background">
+
+    <Button
+        android:id="@+id/add_contact_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="Contact"
+        android:drawableEnd="@drawable/contact_icon_btn"
+        android:backgroundTint="@color/grey"
+        android:drawablePadding="8dp"/>
+
+    <Button
+        android:id="@+id/add_note_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="Note"
+        android:drawableEnd="@drawable/notes_icon_btn"
+        android:backgroundTint="@color/grey"
+        android:drawablePadding="8dp"/>
+
+    <Button
+        android:id="@+id/add_reminder_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="Reminder"
+        android:drawableEnd="@drawable/white_notification"
+        android:backgroundTint="@color/grey"
+        android:drawablePadding="8dp"/>
+
+</LinearLayout>

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_contacts"
-        android:icon="@drawable/kirby_flat"
-        android:title="Contacts" />
+        android:icon="@drawable/contact_icon_btn"
+        android:title="Contacts"
+        app:iconTint="@android:color/white"/>
     <item
         android:id="@+id/nav_notes"
-        android:icon="@drawable/kirby_flat"
+        android:icon="@drawable/notes_icon_btn"
         android:title="Notes" />
     <item
         android:id="@+id/nav_schedule"
-        android:icon="@drawable/kirby_flat"
+        android:icon="@drawable/orange_calendar_icon_btn"
         android:title="Schedule" />
 
     <item
         android:id="@+id/nav_tracker"
-        android:icon="@drawable/kirby_flat"
+        android:icon="@drawable/tracker_icon_btn"
         android:title="Tracker" />
 
 
