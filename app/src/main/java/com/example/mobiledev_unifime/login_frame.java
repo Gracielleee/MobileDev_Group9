@@ -2,6 +2,7 @@ package com.example.mobiledev_unifime;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -28,6 +29,17 @@ public class login_frame extends AppCompatActivity {
 
         createAccountButton.setOnClickListener(v -> {
             Intent intent = new Intent(login_frame.this, create_account_frame.class);
+            startActivity(intent);
+        });
+
+        // Get reference to the button
+        Button loginButton = findViewById(R.id.loginButton);
+
+        // Set click listener
+        loginButton.setOnClickListener(v -> {
+            // Intent to move to the next frame
+            Log.d("Button Click", "Create Account Button Clicked");
+            Intent intent = new Intent(login_frame.this, activity_main_frame.class);
             startActivity(intent);
         });
     }
