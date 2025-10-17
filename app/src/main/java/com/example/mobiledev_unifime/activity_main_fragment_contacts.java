@@ -1,43 +1,187 @@
 package com.example.mobiledev_unifime;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSnapHelper;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SnapHelper;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mobiledev_unifime.model.Contact;
+import com.example.mobiledev_unifime.model.ContactGroup;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class activity_main_fragment_contacts extends Fragment {
 
+    private AdapterContactCard adapterContact;
+    private List<Contact> allContacts;
+    private RecyclerView recyclerViewContact;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_main_fragment_contacts, container, false);
 
-        // Set up Contact Group Recycler View
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_contactGroup);
+        if (allContacts == null) {
+            createContacts();
+        }
 
-        List<String> contactGroups = Arrays.asList("Family", "Church", "Hiking", "School", "Work", "Province");
+        // Get references to RecyclerViews
+        RecyclerView recyclerViewContactGroup = view.findViewById(R.id.recyclerView_contactGroup);
+        recyclerViewContact = view.findViewById(R.id.recyclerView_contacts);
 
-        adapter_contactgroup adapter = new adapter_contactgroup(contactGroups, groupName -> {
-        });
 
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        recyclerView.setHasFixedSize(true);
+        // Setup RecyclerViews
+        setupGroupRecyclerView(recyclerViewContactGroup);
+        setupContactRecyclerView(recyclerViewContact);
 
-        // Add snap helper for snapping effect
-        SnapHelper snapHelper = new LinearSnapHelper();
-        snapHelper.attachToRecyclerView(recyclerView);
+        // Retrieve and filter by last selected group
+        SharedPreferences preferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String lastSelectedGroupName = preferences.getString("last_selected_group", ContactGroup.FAMILY.name()); // Default to FAMILY
+
+        // Ensure this conversion is safe
+        try {
+            ContactGroup lastSelectedGroup = ContactGroup.valueOf(lastSelectedGroupName);
+            filterContacts(lastSelectedGroup); // Filter contacts based on last selected group
+        } catch (IllegalArgumentException e) {
+            Log.e("ContactGroupError", "Invalid ContactGroup retrieved: " + lastSelectedGroupName);
+            filterContacts(ContactGroup.FAMILY); // Fall back to default
+        }
 
         return view;
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences preferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String lastSelectedGroupName = preferences.getString("last_selected_group", null);
+        filterContacts(lastSelectedGroupName != null ? ContactGroup.valueOf(lastSelectedGroupName) : ContactGroup.FAMILY);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        hideKeyboard();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        recyclerViewContact = null;
+        adapterContact = null;
+    }
+
+    private void setupGroupRecyclerView(RecyclerView recyclerView) {
+        List<ContactGroup> contactGroups = Arrays.asList(
+                ContactGroup.FAMILY,
+                ContactGroup.CHURCH,
+                ContactGroup.HIKING,
+                ContactGroup.SCHOOL,
+                ContactGroup.WORK,
+                ContactGroup.PROVINCE
+        );
+
+        AdapterContactGroup groupAdapter = new AdapterContactGroup(contactGroups, group -> {
+            Log.d("GroupClick", "Group clicked: " + group.getDisplayName());
+            filterContacts(group);
+
+            // Store the last selected group
+            SharedPreferences preferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("last_selected_group", group.name());
+            editor.apply();
+            Log.d("GroupSave", "Saved group: " + group.name());
+        });
+
+        recyclerView.setAdapter(groupAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setHasFixedSize(true);
+    }
+
+    private void setupContactRecyclerView(RecyclerView recyclerView) {
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapterContact = new AdapterContactCard(new ArrayList<>());
+
+        // Set click listener to navigate to detail fragment
+        adapterContact.setOnContactClickListener(contact -> {
+            Log.d("ContactClick", "Contact clicked: " + contact.getName());
+            navigateToContactDetail(contact);
+        });
+
+        recyclerView.setAdapter(adapterContact);
+        Log.d("ContactRecyclerView", "Contact RecyclerView initialized");
+    }
+
+    private void createContacts() {
+        allContacts = new ArrayList<>();
+        // Updated: Added birthday and description
+        allContacts.add(new Contact("Brownie", R.drawable.brownie, ContactGroup.FAMILY, "October 9, 2002", "Foodie"));
+        allContacts.add(new Contact("Kirby", R.drawable.kirby_flat, ContactGroup.CHURCH, "March 15, 1999", "Church member"));
+        allContacts.add(new Contact("Mikee", R.drawable.mikee, ContactGroup.HIKING, "July 22, 2000", "Adventure seeker"));
+
+        Log.d("Contacts", "Created contacts: " + allContacts.size());
+
+        for (Contact contact : allContacts) {
+            Log.d("ContactsList", "Contact: " + contact.getName() + " | Group: " + contact.getGroup().getDisplayName() + " | Birthday: " + contact.getBirthday());
+        }
+    }
+
+    private void filterContacts(ContactGroup selectedGroup) {
+        if (selectedGroup == null || allContacts == null || adapterContact == null) {
+            Log.w("FilterDebug", "Cannot filter: null parameters");
+            return;
+        }
+
+        List<Contact> filteredContacts = new ArrayList<>();
+
+        Log.d("FilterDebug", "Filtering contacts for group: " + selectedGroup.getDisplayName());
+
+        for (Contact contact : allContacts) {
+            if (contact.getGroup() == selectedGroup) {
+                filteredContacts.add(contact);
+                Log.d("FilterDebug", "✓ Contact added: " + contact.getName());
+            }
+        }
+
+        adapterContact.updateContacts(filteredContacts);
+        Log.d("FilteredContacts", "Filtered " + filteredContacts.size() + " contacts");
+    }
+
+//    private void navigateToContactDetail(Contact contact) {
+//        ContactDetailFragment detailFragment = ContactDetailFragment.newInstance(contact);
+//
+//        getParentFragmentManager().beginTransaction()
+//                .replace(R.id.contact_profileCard, detailFragment)
+//                .addToBackStack(null)
+//                .commit();
+//    }
+
+    private void navigateToContactDetail(Contact contact) {
+        Intent intent = new Intent(getContext(), ContactDetailActivity.class);
+        intent.putExtra("contact_data", contact);
+        startActivity(intent);
+    }
+
+
+    private void hideKeyboard() {
+        View view = getView();
+        if (view != null) {
+            android.view.inputmethod.InputMethodManager imm =
+                    (android.view.inputmethod.InputMethodManager) getContext()
+                            .getSystemService(android.content.Context.INPUT_METHOD_SERVICE);
+            if (imm != null) {
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+        }
     }
 }
