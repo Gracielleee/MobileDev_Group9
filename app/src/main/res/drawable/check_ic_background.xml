@@ -1,0 +1,19 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#B4BCB2"/> <!-- Semi-transparent gray for the shadow -->
+            <corners android:radius="50dp" /> <!-- Make the corners rounded -->
+            <padding
+                android:left="0dp"
+                android:top="0dp"
+                android:right="0dp"
+                android:bottom="2dp" /> <!-- Spacing for shadow effect -->
+        </shape>
+    </item>
+    <item android:top="0dp">
+        <shape android:shape="oval">
+            <solid android:color="#F3FFF6" />
+            <size android:width="100dp" android:height="100dp" />
+        </shape>
+    </item>
+</layer-list>

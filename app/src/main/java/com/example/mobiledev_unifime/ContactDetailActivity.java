@@ -15,7 +15,7 @@ public class ContactDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_view);
+        setContentView(R.layout.contact_view);
 
         // Retrieve the contact object passed through the intent
         Contact contact = getIntent().getParcelableExtra("contact_data");

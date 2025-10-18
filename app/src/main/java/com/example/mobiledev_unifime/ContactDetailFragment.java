@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mobiledev_unifime.model.Contact;
 import com.google.android.material.tabs.TabLayout;
@@ -35,7 +34,7 @@ public class ContactDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate your existing layout
-        View view = inflater.inflate(R.layout.activity_contact_view, container, false);
+        View view = inflater.inflate(R.layout.contact_view, container, false);
 
         // Get all the views from your layout
         CircleImageView profilePicture = view.findViewById(R.id.contact_profilePicture);

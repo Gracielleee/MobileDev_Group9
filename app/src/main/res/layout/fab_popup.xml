@@ -1,6 +1,6 @@
 <!-- dialog_add_note.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
@@ -12,26 +12,29 @@
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:text="Contact"
-        android:drawableEnd="@drawable/contact_icon_btn"
-        android:backgroundTint="@color/grey"
-        android:drawablePadding="8dp"/>
+        android:drawableEnd="@drawable/fab_contact_ic"
+        android:backgroundTint="@color/white"
+        android:drawablePadding="8dp"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/add_note_btn"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:text="Note"
-        android:drawableEnd="@drawable/notes_icon_btn"
-        android:backgroundTint="@color/grey"
-        android:drawablePadding="8dp"/>
+        android:drawableEnd="@drawable/fab_note_ic"
+        android:backgroundTint="@color/white"
+        android:drawablePadding="8dp"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/add_reminder_btn"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:text="Reminder"
-        android:drawableEnd="@drawable/white_notification"
-        android:backgroundTint="@color/grey"
-        android:drawablePadding="8dp"/>
+        android:drawableEnd="@drawable/fab_reminder_ic"
+        android:backgroundTint="@color/white"
+        android:drawablePadding="8dp"
+        android:textColor="@color/black"/>
 
 </LinearLayout>
