@@ -18,48 +18,62 @@ import com.google.android.material.snackbar.Snackbar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ActivityNoteView extends AppCompatActivity {
+public class ActivityReminderView extends AppCompatActivity {
     private ImageButton backButton;
-    private ImageButton checkButton;
-    private EditText titleText;
-    private EditText descriptionText;
-    private CircleImageView contactImageView;
-    private Button tagButton;
-    private int imageId;
+    private Button checkButton;
+
+    private TextView titleText;
+    private TextView dateText;
+    private TextView timeText;
+
+    private CircleImageView contact1;
+    private CircleImageView contact2;
+    private CircleImageView contact3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_note_frame);
+        setContentView(R.layout.view_reminder_frame);
 
         // Initialize views
-        titleText = findViewById(R.id.title);
-        descriptionText = findViewById(R.id.description);
         backButton = findViewById(R.id.backButton);
         checkButton = findViewById(R.id.check_button);
-        contactImageView = findViewById(R.id.linked_contact);
-        tagButton = findViewById(R.id.tag); // Initialize the Button
+
+        titleText = findViewById(R.id.title);
+        dateText = findViewById(R.id.date_txt_btn);
+        timeText = findViewById(R.id.time_txt_btn);
+
+        contact1 = findViewById(R.id.contact_1);
+        contact2 = findViewById(R.id.contact_2);
+        contact3 = findViewById(R.id.contact_3);
 
         // Get the intent that started this activity
         Intent intent = getIntent();
 
-        // Retrieve data from the intent
-        String title = intent.getStringExtra("TITLE");
-        String description = intent.getStringExtra("DESC");
-        String tag = intent.getStringExtra("Tag");       // Get the tag string
-        imageId = intent.getIntExtra("IMAGE", -1); // Default to -1 if not found
+        // Retrieve data from the intent using the correct keys
+        String eventTitle = intent.getStringExtra("eventTitle");
+        String eventDate = intent.getStringExtra("eventDate");
+        String eventTime = intent.getStringExtra("eventTime");
+        int contactImage1 = intent.getIntExtra("contact1", -1);
+        int contactImage2 = intent.getIntExtra("contact2", -1);
+        int contactImage3 = intent.getIntExtra("contact3", -1);
 
         // Update UI with the data
-        titleText.setText(title);
-        descriptionText.setText(description);
+        titleText.setText(eventTitle);
+        dateText.setText(eventDate);
+        timeText.setText(eventTime);
 
-        // Set the image if it exists
-        if (imageId != -1) {
-            contactImageView.setImageResource(imageId);
+        // Set the images if they exist
+        if (contactImage1 != -1) {
+            contact1.setImageResource(contactImage1);
         }
-
-        // Set the button text from the tag
-        tagButton.setText(tag);
+        if (contactImage2 != -1) {
+            contact2.setImageResource(contactImage2);
+        }
+        if (contactImage3 != -1) {
+            contact3.setImageResource(contactImage3);
+        }
 
         // Set the Back Button logic
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +88,7 @@ public class ActivityNoteView extends AppCompatActivity {
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCustomGreenToast(v, "Saved",250);
+                showCustomGreenToast(v, "Completed",250);
                 finish();
 
             }

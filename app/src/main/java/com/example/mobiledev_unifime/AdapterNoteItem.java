@@ -17,8 +17,8 @@ import com.example.mobiledev_unifime.model.Note;
 import java.util.List;
 
 public class AdapterNoteItem extends RecyclerView.Adapter<AdapterNoteItem.NoteViewHolder> {
-    private List<Note> notes;
-    private Context context;
+    private final List<Note> notes;
+    private final Context context;
 
     public AdapterNoteItem(List<Note> notes, Context context) {
         this.notes = notes;

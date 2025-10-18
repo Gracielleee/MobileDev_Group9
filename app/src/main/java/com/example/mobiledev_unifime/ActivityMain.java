@@ -99,17 +99,16 @@ public class ActivityMain extends AppCompatActivity {
         addContactButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle adding a new contact here
-                Toast.makeText(ActivityMain.this, "Add New Contact clicked", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
+                // Start the new activity
+                Intent intent = new Intent(ActivityMain.this, ActivityContactAdd.class);
+                startActivity(intent);
             }
         });
 
         addNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle adding a new note here
-                Toast.makeText(ActivityMain.this, "Add New Note clicked", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
                 // Start the new activity
                 Intent intent = new Intent(ActivityMain.this, ActivityNoteAdd.class);
@@ -120,9 +119,10 @@ public class ActivityMain extends AppCompatActivity {
         addReminderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle adding a new reminder here
-                Toast.makeText(ActivityMain.this, "Add New Reminder clicked", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
+                // Start the new activity
+                Intent intent = new Intent(ActivityMain.this, ActivityReminderAdd.class);
+                startActivity(intent);
             }
         });
     }

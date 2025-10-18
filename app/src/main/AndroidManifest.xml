@@ -44,6 +44,11 @@
 
         <activity android:name=".ActivityNoteAdd" />
         <activity android:name=".ActivityNoteView" />
+        <activity android:name=".ActivityContactAdd" />
+        <activity android:name=".ActivityReminderAdd" />
+        <activity android:name=".ActivityReminderView" />
+        <activity android:name=".ActivityReminderView2" />
+
 
         <meta-data
             android:name="preloaded_fonts"

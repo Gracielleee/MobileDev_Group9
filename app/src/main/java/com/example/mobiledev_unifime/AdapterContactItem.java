@@ -1,10 +1,13 @@
 package com.example.mobiledev_unifime;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,12 +20,14 @@ public class AdapterContactItem extends RecyclerView.Adapter<AdapterContactItem.
 
     private final List<Contact> items;
     private OnContactClickListener listener;
+    private final Context context;
 
     public interface OnContactClickListener {
         void onContactClick(Contact contact);
     }
 
-    public AdapterContactItem(List<Contact> items) {
+    public AdapterContactItem(Context context, List<Contact> items) {
+        this.context = context;
         this.items = items;
     }
 
@@ -49,9 +54,13 @@ public class AdapterContactItem extends RecyclerView.Adapter<AdapterContactItem.
 
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
-        if (items != null && position < items.size()) {
-            holder.bind(items.get(position), listener);
-        }
+        Contact contact = items.get(position);
+        holder.bind(contact, listener);
+
+        // Set onClickListener for the ImageButton
+        holder.logButton.setOnClickListener(v -> {
+            Toast.makeText(context, "Connected with " + contact.getName() + " today  |  Undo?", Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -63,10 +72,13 @@ public class AdapterContactItem extends RecyclerView.Adapter<AdapterContactItem.
         private final TextView cardNameTextView;
         private final ImageView cardImageView;
 
+        private final ImageButton logButton;
+
         public ContactViewHolder(@NonNull View itemView) {
             super(itemView);
             cardNameTextView = itemView.findViewById(R.id.contact_name);
             cardImageView = itemView.findViewById(R.id.contact_profilePicture);
+            logButton = itemView.findViewById(R.id.log_btn);
         }
 
         public void bind(Contact item, OnContactClickListener listener) {

@@ -28,7 +28,7 @@ public class FragmentContactsMainFrame extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_main_fragment_contacts, container, false);
+        View view = inflater.inflate(R.layout.main_fragment_contacts, container, false);
 
         if (allContacts == null) {
             allContacts = createContacts();
@@ -110,7 +110,9 @@ public class FragmentContactsMainFrame extends Fragment {
 
     private void setupContactRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapterContact = new AdapterContactItem(new ArrayList<>());
+
+        // Pass the context and initialize the adapter
+        adapterContact = new AdapterContactItem(getContext(), new ArrayList<>());
 
         // Set click listener to navigate to detail fragment
         adapterContact.setOnContactClickListener(contact -> {
@@ -125,8 +127,9 @@ public class FragmentContactsMainFrame extends Fragment {
     public static List<Contact> createContacts() {
         List<Contact> contacts = new ArrayList<>();
         contacts.add(new Contact("Brownie", R.drawable.brownie, ContactGroup.FAMILY, "October 9, 2002", "Foodie"));
-        contacts.add(new Contact("Kirby", R.drawable.kirby_flat, ContactGroup.CHURCH, "March 15, 1999", "Church member"));
-        contacts.add(new Contact("Mikee", R.drawable.mikee, ContactGroup.HIKING, "July 22, 2000", "Adventure seeker"));
+        contacts.add(new Contact("Lola Vic", R.drawable.lolavic, ContactGroup.FAMILY, "July 5, 1940", "Dancer"));
+        contacts.add(new Contact("Kirby", R.drawable.kirby_flat, ContactGroup.CHURCH, "December 25, 1999", "Church member"));
+        contacts.add(new Contact("Mikee", R.drawable.mikee, ContactGroup.HIKING, "February 3, 2000", "Adventure seeker"));
 
         Log.d("Contacts", "Created contacts: " + contacts.size());
 
