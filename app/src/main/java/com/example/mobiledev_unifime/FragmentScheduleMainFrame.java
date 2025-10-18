@@ -1,11 +1,13 @@
 package com.example.mobiledev_unifime;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 public class FragmentScheduleMainFrame extends Fragment {
@@ -15,7 +17,7 @@ public class FragmentScheduleMainFrame extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate layout
-        View view = inflater.inflate(R.layout.activity_main_fragment_schedule, container, false);
+        View view = inflater.inflate(R.layout.main_fragment_schedule, container, false);
 
         // Initialize buttons
         btnAll = view.findViewById(R.id.btnAll);
@@ -30,6 +32,38 @@ public class FragmentScheduleMainFrame extends Fragment {
         btnReminders.setOnClickListener(v -> setActiveButton(btnReminders));
         btnKeyDates.setOnClickListener(v -> setActiveButton(btnKeyDates));
 
+        //Logic to open reminder items
+        CardView eventCardView1 = view.findViewById(R.id.eventCard1);
+        CardView eventCardView2 = view.findViewById(R.id.eventCard2);
+
+        eventCardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getActivity(), ActivityReminderView.class);
+                intent1.putExtra("eventTitle", "Family Outing @ local beach");
+                intent1.putExtra("eventDate", "October 9, 2025");
+                intent1.putExtra("eventTime", "10 AM - 2 PM");
+                intent1.putExtra("contact1", R.drawable.kirby_flat);
+                intent1.putExtra("contact2", R.drawable.mikee);
+                intent1.putExtra("contact3", R.drawable.lolavic);
+                startActivity(intent1);
+            }
+        });
+
+        eventCardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getActivity(), ActivityReminderView2.class);
+                intent2.putExtra("eventTitle", "Team Building @ resort");
+                intent2.putExtra("eventDate", "October 15, 2025");
+                intent2.putExtra("eventTime", "9 AM - 4 PM");
+                intent2.putExtra("contact1", R.drawable.brownie);
+                intent2.putExtra("contact2", R.drawable.kirby_flat);
+                intent2.putExtra("contact3", R.drawable.mikee);
+                startActivity(intent2);
+            }
+        });
+
         return view;
     }
 
@@ -40,7 +74,7 @@ public class FragmentScheduleMainFrame extends Fragment {
         resetButton(btnKeyDates);
 
         // Set the active one to orange
-        activeButton.setBackgroundTintList(getResources().getColorStateList(R.color.orange));
+        activeButton.setBackgroundTintList(getResources().getColorStateList(R.color.primary));
         activeButton.setTextColor(getResources().getColor(R.color.white));
     }
 

@@ -53,7 +53,7 @@
                 android:id="@+id/btnThisWeek"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/orange"
+                android:backgroundTint="@color/primary"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="6dp"
                 android:text="This Week"
@@ -126,7 +126,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/star_icon_tracker"
+                    android:src="@drawable/person_heart_ic"
                     android:contentDescription="Favorite" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -170,7 +170,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/star_icon_tracker"
+                    android:src="@drawable/person_heart_ic"
                     android:contentDescription="Favorite" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -247,7 +247,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/star_icon_tracker"
+                        android:src="@drawable/person_heart_ic"
                         android:contentDescription="Favorite" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -300,7 +300,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/star_icon_tracker"
+                        android:src="@drawable/person_heart_ic"
                         android:contentDescription="Favorite" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -353,7 +353,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/star_icon_tracker"
+                        android:src="@drawable/person_heart_ic"
                         android:contentDescription="Favorite" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -406,7 +406,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/star_icon_tracker"
+                        android:src="@drawable/person_heart_ic"
                         android:contentDescription="Favorite" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -459,7 +459,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/star_icon_tracker"
+                        android:src="@drawable/person_heart_ic"
                         android:contentDescription="Favorite" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -513,7 +513,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/star_icon_tracker"
+                        android:src="@drawable/person_heart_ic"
                         android:contentDescription="Favorite" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

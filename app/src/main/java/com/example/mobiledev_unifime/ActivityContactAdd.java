@@ -1,73 +1,40 @@
 package com.example.mobiledev_unifime;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.snackbar.Snackbar;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+public class ActivityContactAdd extends AppCompatActivity {
 
-public class ActivityNoteView extends AppCompatActivity {
     private ImageButton backButton;
     private ImageButton checkButton;
-    private EditText titleText;
-    private EditText descriptionText;
-    private CircleImageView contactImageView;
-    private Button tagButton;
-    private int imageId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_note_frame);
+        setContentView(R.layout.add_contact_frame);
 
-        // Initialize views
-        titleText = findViewById(R.id.title);
-        descriptionText = findViewById(R.id.description);
         backButton = findViewById(R.id.backButton);
         checkButton = findViewById(R.id.check_button);
-        contactImageView = findViewById(R.id.linked_contact);
-        tagButton = findViewById(R.id.tag); // Initialize the Button
 
-        // Get the intent that started this activity
-        Intent intent = getIntent();
-
-        // Retrieve data from the intent
-        String title = intent.getStringExtra("TITLE");
-        String description = intent.getStringExtra("DESC");
-        String tag = intent.getStringExtra("Tag");       // Get the tag string
-        imageId = intent.getIntExtra("IMAGE", -1); // Default to -1 if not found
-
-        // Update UI with the data
-        titleText.setText(title);
-        descriptionText.setText(description);
-
-        // Set the image if it exists
-        if (imageId != -1) {
-            contactImageView.setImageResource(imageId);
-        }
-
-        // Set the button text from the tag
-        tagButton.setText(tag);
 
         // Set the Back Button logic
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
-
             }
+
+
         });
 
         //Set the Check Button logic
@@ -96,4 +63,5 @@ public class ActivityNoteView extends AppCompatActivity {
         // Dismiss the Toast after the specified duration
         new Handler().postDelayed(toast::cancel, durationInMillis);
     }
+
 }

@@ -20,46 +20,29 @@
 
     </ImageButton>
 
-    <TextView
-        android:id="@+id/link_to"
-        android:layout_width="wrap_content"
-        android:layout_height="64dp"
-        android:layout_alignTop="@id/backButton"
-        android:layout_alignEnd="@id/linked_contacts_list"
-        android:layout_marginEnd="80dp"
-        android:text="Link to"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:gravity="center_vertical"/>
 
-    <LinearLayout
-        android:id="@+id/linked_contacts_list"
+    <ImageButton
+        android:id="@+id/profile_img_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
         android:layout_alignTop="@id/backButton"
-        android:layout_alignParentEnd="true"
-        android:orientation="horizontal">
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/add_photo_ic">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginEnd="0dp"
-            android:background="@drawable/contactgroup_background"
-            android:src="@drawable/add_icon_btn_linkto"
-            android:padding="9dp"/>
-
-    </LinearLayout>
+    </ImageButton>
 
     <EditText
-        android:id="@+id/title"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/link_to"
+        android:layout_below="@id/backButton"
         android:layout_alignParentStart="true"
+        android:layout_alignTop="@id/profile_img_btn"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:hint="Title"
+        android:layout_marginTop="180dp"
+        android:hint="Enter Name"
         android:textColorHint="@android:color/darker_gray"
         android:textColor="@color/black"
         android:textSize="45sp"
@@ -71,31 +54,59 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="120dp"
-        android:layout_below="@id/title"
-        android:layout_alignStart="@+id/title"
+        android:layout_below="@id/name"
+        android:layout_alignStart="@+id/name"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="23dp"
-        android:hint="text here..."
+        android:layout_marginTop="5dp"
+        android:hint="description here..."
         android:textColorHint="@android:color/darker_gray"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:background="@android:color/transparent"/>
 
+    <Button
+        android:id="@+id/key_dates_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Key Dates:"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/add_icon_btn_linkto"
+        android:layout_alignBottom="@id/contact_channels_btn"
+        android:layout_alignStart="@id/name"
+        android:layout_marginBottom="50dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/contact_channels_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Contact Channels:"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/add_icon_btn_linkto"
+        android:layout_alignBottom="@id/group_list"
+        android:layout_alignStart="@id/name"
+        android:layout_marginBottom="80dp">
+
+    </Button>
+
     <LinearLayout
-        android:id="@+id/tag_list"
+        android:id="@+id/group_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@id/title"
+        android:layout_alignLeft="@id/name"
         android:layout_marginBottom="95dp">
 
         <Button
-            android:id="@+id/add_tag_button"
+            android:id="@+id/select_group_button"
             android:layout_alignParentBottom="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add tag"
+            android:text="Select group"
             android:textColor="@color/black"
             android:textSize="13sp"
             android:backgroundTint="@color/grey"
@@ -112,7 +123,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="@drawable/check_ic_background"
-        android:layout_alignTop="@id/tag_list"
+        android:layout_alignTop="@id/group_list"
         android:src="@drawable/check_ic"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"

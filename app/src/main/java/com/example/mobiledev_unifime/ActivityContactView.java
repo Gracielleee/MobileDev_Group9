@@ -19,8 +19,6 @@ public class ActivityContactView extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Show a Toast message
-                Toast.makeText(ActivityContactView.this, "Back button clicked", Toast.LENGTH_SHORT).show();
                 // This logic handles the back navigation
                 finish(); // Finishes the current activity and returns to the previous one
             }

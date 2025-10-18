@@ -13,6 +13,5 @@
     android:clickable="true"
     android:focusable="true"
     android:background="@drawable/contactgroup_background"
-
     tools:text="Family"
     />

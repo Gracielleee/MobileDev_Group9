@@ -13,8 +13,8 @@ import java.util.List;
 
 public class AdapterContactGroup extends RecyclerView.Adapter<AdapterContactGroup.ViewHolder> {
 
-    private List<ContactGroup> contactGroups;
-    private OnItemClickListener listener;
+    private final List<ContactGroup> contactGroups;
+    private final OnItemClickListener listener;
     private int selectedPosition = 0;
 
     public interface OnItemClickListener {

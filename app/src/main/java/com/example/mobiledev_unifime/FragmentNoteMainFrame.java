@@ -37,17 +37,23 @@ public class FragmentNoteMainFrame extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerView_notes);
 
         // Set the LayoutManager to GridLayoutManager
-        int numberOfColumns = 2; // Adjust the number of columns as needed
+        int numberOfColumns = 2;
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), numberOfColumns));
 
         // Initialize allContacts
         allContacts = FragmentContactsMainFrame.createContacts();
 
-        // Prepare your data
+        // Prepare  data
         noteList = new ArrayList<>();
-        noteList.add(new Note(allContacts.get(1), "Travel", "Antarctica, Korea, Japan", "Like"));
-        noteList.add(new Note(allContacts.get(2), "Hobby", "Journaling, Sketching, Yoga", "Like"));
-        noteList.add(new Note(allContacts.get(0), "Travel", "Antarctica, Korea, Japan", "Like"));
+        noteList.add(new Note(allContacts.get(1), "Travel", "Antarctica, Korea, Japan", "Likes"));
+        noteList.add(new Note(allContacts.get(2), "Hobby", "Journaling, Sketching, Yoga", "Likes"));
+        noteList.add(new Note(allContacts.get(3), "Travel", "New Zealand, Palawan, Batanes", "Likes"));
+        noteList.add(new Note(allContacts.get(1), "Song", "Plays Multo everyday", "Likes"));
+        noteList.add(new Note(allContacts.get(3), "Hobby", "Knitting, Sketching, Yoga", "Likes"));
+        noteList.add(new Note(allContacts.get(0), "Food", "Noise, bath, raisin", "Dislikes"));
+        noteList.add(new Note(allContacts.get(3), "Singers", "AURORA, Laufey, Beabadobee", "Likes"));
+        noteList.add(new Note(allContacts.get(0), "Song", "Cappuccino Assassino", "Dislikes"));
+        noteList.add(new Note(allContacts.get(2), "Singers", "Coldplay, OneRepublic", "Likes"));
 
         // Set up the adapter
         adapter = new AdapterNoteItem(noteList, getContext());

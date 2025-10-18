@@ -4,11 +4,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Contact implements Parcelable {
-    private String name;
-    private int imageId;
-    private ContactGroup group;
-    private String birthday;
-    private String description;
+    private final String name;
+    private final int imageId;
+    private final ContactGroup group;
+    private final String birthday;
+    private final String description;
 
     public Contact(String name, int imageId, ContactGroup group, String birthday, String description) {
         this.name = name;

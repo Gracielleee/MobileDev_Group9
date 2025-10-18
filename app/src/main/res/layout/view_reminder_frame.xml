@@ -26,7 +26,7 @@
         android:layout_height="64dp"
         android:layout_alignTop="@id/backButton"
         android:layout_alignEnd="@id/linked_contacts_list"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="120dp"
         android:text="Link to"
         android:textColor="@android:color/black"
         android:textStyle="bold"
@@ -42,18 +42,34 @@
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/contact_1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="-45dp"
+            android:background="@drawable/contactgroup_background"
+            android:src="@drawable/mikee"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/contact_2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="-45dp"
+            android:background="@drawable/contactgroup_background"
+            android:src="@drawable/mikee"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/contact_3"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginEnd="0dp"
             android:background="@drawable/contactgroup_background"
-            android:src="@drawable/add_icon_btn_linkto"
-            android:padding="9dp"/>
+            android:src="@drawable/mikee"/>
 
     </LinearLayout>
 
     <EditText
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/link_to"
         android:layout_alignParentStart="true"
@@ -64,6 +80,21 @@
         android:textColor="@color/black"
         android:textSize="45sp"
         android:background="@android:color/transparent"/>
+
+    <ImageButton
+        android:id="@+id/more_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/linked_contacts_list"
+        android:layout_alignTop="@id/title"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:contentDescription="More button"
+        android:src="@drawable/dots_ic_black">
+
+    </ImageButton>
 
     <EditText
         android:id="@+id/description"
@@ -81,39 +112,49 @@
         android:textSize="18sp"
         android:background="@android:color/transparent"/>
 
-    <LinearLayout
-        android:id="@+id/tag_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+    <Button
+        android:gravity="center_vertical"
+        android:id="@+id/date_txt_btn"
+        android:layout_alignBottom="@+id/time_txt_btn"
         android:layout_alignLeft="@id/title"
-        android:layout_marginBottom="95dp">
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date :"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/calendar_ic"
+        android:drawablePadding="0dp"/>
 
-        <Button
-            android:id="@+id/add_tag_button"
-            android:layout_alignParentBottom="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add tag"
-            android:textColor="@color/black"
-            android:textSize="13sp"
-            android:backgroundTint="@color/grey"
-            android:drawableEnd="@drawable/add_icon_btn_linkto"
-            android:drawablePadding="40dp"/>
-
-    </LinearLayout>
+    <Button
+        android:gravity="center_vertical"
+        android:id="@+id/time_txt_btn"
+        android:layout_alignBottom="@+id/check_button"
+        android:layout_alignLeft="@id/title"
+        android:layout_marginBottom="95dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time :"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/clock_ic"
+        android:drawablePadding="0dp"/>
 
     <!-- Checkmark Button -->
-    <ImageButton
+    <Button
         android:id="@+id/check_button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/check_ic_background"
-        android:layout_alignTop="@id/tag_list"
-        android:src="@drawable/check_ic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_green"
+        android:drawableLeft="@drawable/check_wcircle_ic"
+        android:text="Complete"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:padding="15dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="25dp"/>
