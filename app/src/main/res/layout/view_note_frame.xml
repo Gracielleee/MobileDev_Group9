@@ -27,7 +27,7 @@
         android:layout_alignTop="@id/backButton"
         android:layout_alignEnd="@id/linked_contacts_list"
         android:layout_marginEnd="65dp"
-        android:text="Link to"
+        android:text="Linked to"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:textSize="14sp"
@@ -47,8 +47,7 @@
             android:layout_height="50dp"
             android:layout_marginEnd="0dp"
             android:background="@drawable/contactgroup_background"
-            android:src="@drawable/add_icon_btn_linkto"
-            android:padding="9dp"/>
+            android:src="@drawable/mikee"/>
 
     </LinearLayout>
 
@@ -102,16 +101,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@id/check_button"
         android:layout_alignLeft="@id/title"
-        android:layout_marginBottom="95dp">
+        android:layout_marginBottom="70dp">
 
         <Button
             android:id="@+id/tag"
             android:layout_alignParentBottom="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add tag"
+            android:text="Like"
             android:textColor="@color/black"
             android:textSize="13sp"
             android:backgroundTint="@color/grey"
@@ -127,10 +126,9 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="@drawable/check_ic_background"
-        android:layout_alignTop="@id/tag_list"
         android:src="@drawable/check_ic"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="25dp"/>
+        android:layout_marginBottom="50dp"/>
 
 </RelativeLayout>

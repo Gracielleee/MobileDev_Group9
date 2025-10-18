@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@color/white"
-    tools:context=".create_account_frame">
+    tools:context=".ActivityCreateAccount">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class activity_main_frame extends AppCompatActivity {
+public class ActivityMain extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class activity_main_frame extends AppCompatActivity {
         // Show the contacts fragment by default
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_host_fragment, new activity_main_fragment_contacts())
+                    .replace(R.id.nav_host_fragment, new FragmentContactsMainFrame())
                     .commit();
         }
 
@@ -52,16 +52,16 @@ public class activity_main_frame extends AppCompatActivity {
                 // Handle item selection
                 int itemId = item.getItemId();
                 if (itemId == R.id.nav_contacts) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new activity_main_fragment_contacts()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new FragmentContactsMainFrame()).commit();
                     return true;
                 } else if (itemId == R.id.nav_notes) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new activity_main_fragment_notes()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new FragmentNoteMainFrame()).commit();
                     return true;
                 } else if (itemId == R.id.nav_schedule) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new activity_main_fragment_schedule()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new FragmentScheduleMainFrame()).commit();
                     return true;
                 } else if (itemId == R.id.nav_tracker) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new activity_main_fragment_tracker()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new FragmentTrackerMainFrame()).commit();
                     return true;
                 }
                 return false;
@@ -100,7 +100,7 @@ public class activity_main_frame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Handle adding a new contact here
-                Toast.makeText(activity_main_frame.this, "Add New Contact clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityMain.this, "Add New Contact clicked", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
             }
         });
@@ -109,10 +109,10 @@ public class activity_main_frame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Handle adding a new note here
-                Toast.makeText(activity_main_frame.this, "Add New Note clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityMain.this, "Add New Note clicked", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
                 // Start the new activity
-                Intent intent = new Intent(activity_main_frame.this, add_note_frame.class);
+                Intent intent = new Intent(ActivityMain.this, ActivityNoteAdd.class);
                 startActivity(intent);
             }
         });
@@ -121,7 +121,7 @@ public class activity_main_frame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Handle adding a new reminder here
-                Toast.makeText(activity_main_frame.this, "Add New Reminder clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityMain.this, "Add New Reminder clicked", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
             }
         });

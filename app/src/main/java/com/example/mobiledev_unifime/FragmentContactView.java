@@ -15,14 +15,14 @@ import com.google.android.material.tabs.TabLayout;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ContactDetailFragment extends Fragment {
+public class FragmentContactView extends Fragment {
 
     private static final String ARG_CONTACT_NAME = "contact_name";
     private static final String ARG_CONTACT_IMAGE = "contact_image";
     private static final String ARG_CONTACT_GROUP = "contact_group";
 
-    public static ContactDetailFragment newInstance(Contact contact) {
-        ContactDetailFragment fragment = new ContactDetailFragment();
+    public static FragmentContactView newInstance(Contact contact) {
+        FragmentContactView fragment = new FragmentContactView();
         Bundle args = new Bundle();
         args.putString(ARG_CONTACT_NAME, contact.getName());
         args.putInt(ARG_CONTACT_IMAGE, contact.getImageId());

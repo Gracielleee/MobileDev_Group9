@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobiledev_unifime.model.Contact;
 
-public class ContactDetailActivity extends AppCompatActivity {
+public class ActivityContactDetail extends AppCompatActivity {
 
     private static final String TAG = "ContactDetailActivity";
 
