@@ -36,6 +36,9 @@
         <activity android:name=".activity_contact_view"
             android:exported="false"/>
 
+        <activity android:name=".add_note_frame" />
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -1,6 +1,5 @@
 package com.example.mobiledev_unifime;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,7 +12,7 @@ public class activity_contact_view extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_view);
+        setContentView(R.layout.contact_view);
 
         // Set up the back button
         ImageView backButton = findViewById(R.id.backButton);

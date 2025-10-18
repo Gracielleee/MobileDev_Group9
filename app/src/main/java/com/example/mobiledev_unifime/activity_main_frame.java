@@ -3,6 +3,7 @@ package com.example.mobiledev_unifime;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -84,8 +85,8 @@ public class activity_main_frame extends AppCompatActivity {
         // Get the FAB's position
         int[] location = new int[2];
         anchorView.getLocationOnScreen(location);
-        int x = location[0] + anchorView.getWidth()/2 - popupWindow.getWidth()/2; // Center the popup
-        int y = location[1] - popupWindow.getHeight(); // Position it above the FAB
+        int x = location[0] + anchorView.getWidth()/2 - popupWindow.getWidth()/2 - 380; // X-coordinate
+        int y = location[1] - popupWindow.getHeight() - 635; // Y-coordinate
 
         // Show the popup window at the specified location
         popupWindow.showAtLocation(anchorView, Gravity.NO_GRAVITY, x, y);
@@ -110,6 +111,9 @@ public class activity_main_frame extends AppCompatActivity {
                 // Handle adding a new note here
                 Toast.makeText(activity_main_frame.this, "Add New Note clicked", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
+                // Start the new activity
+                Intent intent = new Intent(activity_main_frame.this, add_note_frame.class);
+                startActivity(intent);
             }
         });
 
