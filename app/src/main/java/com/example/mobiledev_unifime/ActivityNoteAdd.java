@@ -6,7 +6,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class add_note_frame extends AppCompatActivity {
+public class ActivityNoteAdd extends AppCompatActivity {
 
     private ImageButton backButton;
 

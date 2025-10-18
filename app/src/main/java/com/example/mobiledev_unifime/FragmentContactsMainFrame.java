@@ -20,10 +20,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class activity_main_fragment_contacts extends Fragment {
+public class FragmentContactsMainFrame extends Fragment {
 
-    private AdapterContactCard adapterContact;
-    private List<Contact> allContacts;
+    private AdapterContactItem adapterContact;
+    private static List<Contact> allContacts;
     private RecyclerView recyclerViewContact;
 
     @Override
@@ -31,7 +31,7 @@ public class activity_main_fragment_contacts extends Fragment {
         View view = inflater.inflate(R.layout.activity_main_fragment_contacts, container, false);
 
         if (allContacts == null) {
-            createContacts();
+            allContacts = createContacts();
         }
 
         // Get references to RecyclerViews
@@ -110,7 +110,7 @@ public class activity_main_fragment_contacts extends Fragment {
 
     private void setupContactRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapterContact = new AdapterContactCard(new ArrayList<>());
+        adapterContact = new AdapterContactItem(new ArrayList<>());
 
         // Set click listener to navigate to detail fragment
         adapterContact.setOnContactClickListener(contact -> {
@@ -122,18 +122,19 @@ public class activity_main_fragment_contacts extends Fragment {
         Log.d("ContactRecyclerView", "Contact RecyclerView initialized");
     }
 
-    private void createContacts() {
-        allContacts = new ArrayList<>();
-        // Updated: Added birthday and description
-        allContacts.add(new Contact("Brownie", R.drawable.brownie, ContactGroup.FAMILY, "October 9, 2002", "Foodie"));
-        allContacts.add(new Contact("Kirby", R.drawable.kirby_flat, ContactGroup.CHURCH, "March 15, 1999", "Church member"));
-        allContacts.add(new Contact("Mikee", R.drawable.mikee, ContactGroup.HIKING, "July 22, 2000", "Adventure seeker"));
+    public static List<Contact> createContacts() {
+        List<Contact> contacts = new ArrayList<>();
+        contacts.add(new Contact("Brownie", R.drawable.brownie, ContactGroup.FAMILY, "October 9, 2002", "Foodie"));
+        contacts.add(new Contact("Kirby", R.drawable.kirby_flat, ContactGroup.CHURCH, "March 15, 1999", "Church member"));
+        contacts.add(new Contact("Mikee", R.drawable.mikee, ContactGroup.HIKING, "July 22, 2000", "Adventure seeker"));
 
-        Log.d("Contacts", "Created contacts: " + allContacts.size());
+        Log.d("Contacts", "Created contacts: " + contacts.size());
 
-        for (Contact contact : allContacts) {
+        for (Contact contact : contacts) {
             Log.d("ContactsList", "Contact: " + contact.getName() + " | Group: " + contact.getGroup().getDisplayName() + " | Birthday: " + contact.getBirthday());
         }
+
+        return contacts; // Return the created list of contacts
     }
 
     private void filterContacts(ContactGroup selectedGroup) {
@@ -167,7 +168,7 @@ public class activity_main_fragment_contacts extends Fragment {
 //    }
 
     private void navigateToContactDetail(Contact contact) {
-        Intent intent = new Intent(getContext(), ContactDetailActivity.class);
+        Intent intent = new Intent(getContext(), ActivityContactDetail.class);
         intent.putExtra("contact_data", contact);
         startActivity(intent);
     }

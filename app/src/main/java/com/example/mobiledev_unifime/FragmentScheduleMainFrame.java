@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
-public class activity_main_fragment_schedule extends Fragment {
+public class FragmentScheduleMainFrame extends Fragment {
 
     private Button btnAll, btnReminders, btnKeyDates;
 

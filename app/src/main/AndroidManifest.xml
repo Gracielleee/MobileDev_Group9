@@ -12,19 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileDev_UnifiME" >
         <activity
-            android:name=".main_login_frame"
+            android:name=".ActivitySignIn"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".create_account_frame"
+            android:name=".ActivityCreateAccount"
             android:exported="false" />
         <activity
-            android:name=".login_frame"
+            android:name=".ActivityLogin"
             android:exported="false" />
         <activity
-            android:name=".get_started_frame"
+            android:name=".ActivityGetStarted"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,17 +33,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity_main_frame"
+            android:name=".ActivityMain"
             android:exported="false" />
         <activity
-            android:name=".ContactDetailActivity"
+            android:name=".ActivityContactDetail"
             android:exported="false" />
         <activity
-            android:name=".activity_contact_view"
+            android:name=".ActivityContactView"
             android:exported="false" />
 
-        <activity android:name=".add_note_frame" />
-
+        <activity android:name=".ActivityNoteAdd" />
+        <activity android:name=".ActivityNoteView" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -2,6 +2,7 @@ package com.example.mobiledev_unifime;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -10,13 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class get_started_frame extends AppCompatActivity {
+public class ActivityLogin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.get_started_frame);
+        setContentView(R.layout.activity_login_frame);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -24,13 +25,21 @@ public class get_started_frame extends AppCompatActivity {
             return insets;
         });
 
+        Button createAccountButton = findViewById(R.id.createAccountButton);
+
+        createAccountButton.setOnClickListener(v -> {
+            Intent intent = new Intent(ActivityLogin.this, ActivityCreateAccount.class);
+            startActivity(intent);
+        });
+
         // Get reference to the button
-        Button getStartedButton = findViewById(R.id.button);
+        Button loginButton = findViewById(R.id.loginButton);
 
         // Set click listener
-        getStartedButton.setOnClickListener(v -> {
+        loginButton.setOnClickListener(v -> {
             // Intent to move to the next frame
-            Intent intent = new Intent(get_started_frame.this, login_frame.class);
+            Log.d("Button Click", "Create Account Button Clicked");
+            Intent intent = new Intent(ActivityLogin.this, ActivitySignIn.class);
             startActivity(intent);
         });
     }
