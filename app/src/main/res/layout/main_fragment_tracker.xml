@@ -111,7 +111,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/kirby_flat" />
+                    android:src="@drawable/brownie" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -155,7 +155,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/kirby_flat" />
+                    android:src="@drawable/lolavic" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -218,7 +218,7 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/kirby_flat" />
+                        android:src="@drawable/mikee" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -231,7 +231,7 @@
                             android:layout_width="250dp"
                             android:layout_height="20dp"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="Auntie Beth"
+                            android:text="Mikee"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 
@@ -283,7 +283,7 @@
                         <TextView
                             android:layout_width="250dp"
                             android:layout_height="20dp"
-                            android:text="Uncle Rene"
+                            android:text="Kirby"
                             android:textSize="16sp"
                             android:textColor="@color/black"
                             android:fontFamily="@font/poppins_medium" />
@@ -324,7 +324,7 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/kirby_flat" />
+                        android:src="@drawable/jhun" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -336,7 +336,7 @@
                         <TextView
                             android:layout_width="250dp"
                             android:layout_height="20dp"
-                            android:text="Tita Joy"
+                            android:text="Jhun-jhun"
                             android:textSize="16sp"
                             android:textColor="@color/black"
                             android:fontFamily="@font/poppins_medium" />
@@ -377,7 +377,7 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/kirby_flat" />
+                        android:src="@drawable/smiski" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -389,7 +389,7 @@
                         <TextView
                             android:layout_width="250dp"
                             android:layout_height="20dp"
-                            android:text="Cousin Mark"
+                            android:text="Mai-Mai"
                             android:textSize="16sp"
                             android:textColor="@color/black"
                             android:fontFamily="@font/poppins_medium" />
@@ -430,7 +430,7 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/kirby_flat" />
+                        android:src="@drawable/tita_baby" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -442,7 +442,7 @@
                         <TextView
                             android:layout_width="250dp"
                             android:layout_height="20dp"
-                            android:text="Grandpa Joe"
+                            android:text="Tita Baby"
                             android:textSize="16sp"
                             android:textColor="@color/black"
                             android:fontFamily="@font/poppins_medium" />
@@ -484,7 +484,7 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/kirby_flat" />
+                        android:src="@drawable/labubu" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -496,7 +496,7 @@
                         <TextView
                             android:layout_width="250dp"
                             android:layout_height="20dp"
-                            android:text="Aunt Maria"
+                            android:text="Luzviminda"
                             android:textSize="16sp"
                             android:textColor="@color/black"
                             android:fontFamily="@font/poppins_medium" />
