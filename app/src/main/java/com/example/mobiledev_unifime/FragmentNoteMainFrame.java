@@ -50,7 +50,7 @@ public class FragmentNoteMainFrame extends Fragment {
         noteList.add(new Note(allContacts.get(3), "Travel", "New Zealand, Palawan, Batanes", "Likes"));
         noteList.add(new Note(allContacts.get(1), "Song", "Plays Multo everyday", "Likes"));
         noteList.add(new Note(allContacts.get(3), "Hobby", "Knitting, Sketching, Yoga", "Likes"));
-        noteList.add(new Note(allContacts.get(0), "Food", "Noise, bath, raisin", "Dislikes"));
+        noteList.add(new Note(allContacts.get(0), "Food", "Potato, tomato, carrot", "Likes"));
         noteList.add(new Note(allContacts.get(3), "Singers", "AURORA, Laufey, Beabadobee", "Likes"));
         noteList.add(new Note(allContacts.get(0), "Song", "Cappuccino Assassino", "Dislikes"));
         noteList.add(new Note(allContacts.get(2), "Singers", "Coldplay, OneRepublic", "Likes"));

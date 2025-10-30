@@ -39,6 +39,7 @@ public class AdapterNoteItem extends RecyclerView.Adapter<AdapterNoteItem.NoteVi
         holder.titleEditView.setText(note.getTitle());
         holder.descEditView.setText(note.getDescription());
         holder.contactImageView.setImageResource(note.getImageId());
+        holder.tagButton.setText(note.getTag());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ActivityNoteView.class);

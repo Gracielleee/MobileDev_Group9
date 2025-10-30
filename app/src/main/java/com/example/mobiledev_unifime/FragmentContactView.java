@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mobiledev_unifime.model.Contact;
 import com.google.android.material.tabs.TabLayout;
@@ -34,7 +35,7 @@ public class FragmentContactView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate your existing layout
-        View view = inflater.inflate(R.layout.contact_view, container, false);
+        View view = inflater.inflate(R.layout.view_contact_frame, container, false);
 
         // Get all the views from your layout
         CircleImageView profilePicture = view.findViewById(R.id.contact_profilePicture);
@@ -43,8 +44,11 @@ public class FragmentContactView extends Fragment {
         TextView contactBirthday = view.findViewById(R.id.contact_birthday);
         TextView contactDescription = view.findViewById(R.id.contact_description);
         ImageView hamburgerMenu = view.findViewById(R.id.hamburger);
+        ImageView backButton = view.findViewById(R.id.backButton);
         ImageView instagramIcon = view.findViewById(R.id.instagram);
         TabLayout tabLayout = view.findViewById(R.id.tab_layout);
+        ViewPager2 viewPager2 = view.findViewById(R.id.viewPager);
+
 
         // Get data from arguments
         if (getArguments() != null) {
@@ -57,8 +61,6 @@ public class FragmentContactView extends Fragment {
             contactName.setText(name);
             profilePicture.setImageResource(imageId);
 
-            // You can set these later with actual data from your Contact model
-            // For now, using placeholder values
             contactBirthday.setText("Birthday not set");
             contactDescription.setText("No description");
         }
@@ -69,9 +71,14 @@ public class FragmentContactView extends Fragment {
             // TODO: Add menu functionality
         });
 
+        backButton.setOnClickListener(v ->{
+            Log.d("ContactDetail", "Back button clicked");
+        });
+
         // Instagram icon click listener
         instagramIcon.setOnClickListener(v -> {
             Log.d("ContactDetail", "Instagram icon clicked");
+            getParentFragmentManager().popBackStack();
             // TODO: Add Instagram profile link functionality
         });
 
@@ -93,68 +100,15 @@ public class FragmentContactView extends Fragment {
             }
         });
 
-        // Back button functionality - using system back
-        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(),
-                new androidx.activity.OnBackPressedCallback(true) {
-                    @Override
-                    public void handleOnBackPressed() {
-                        getParentFragmentManager().popBackStack();
-                    }
-                });
+//        // Back button functionality - using system back
+//        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(),
+//                new androidx.activity.OnBackPressedCallback(true) {
+//                    @Override
+//                    public void handleOnBackPressed() {
+//                        getParentFragmentManager().popBackStack();
+//                    }
+//                });
 
         return view;
     }
 }
-
-// ============================================
-// IMPORTANT: Update your Contact Model
-// ============================================
-/*
-Add birthday and description fields to your Contact class:
-
-package com.example.mobiledev_unifime.model;
-
-public class Contact {
-    private String name;
-    private int imageId;
-    private ContactGroup group;
-    private String birthday;      // ADD THIS
-    private String description;   // ADD THIS
-
-    public Contact(String name, int imageId, ContactGroup group, String birthday, String description) {
-        this.name = name;
-        this.imageId = imageId;
-        this.group = group;
-        this.birthday = birthday;
-        this.description = description;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getImageId() {
-        return imageId;
-    }
-
-    public ContactGroup getGroup() {
-        return group;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-}
-*/

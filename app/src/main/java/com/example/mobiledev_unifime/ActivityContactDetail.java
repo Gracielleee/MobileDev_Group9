@@ -2,11 +2,15 @@ package com.example.mobiledev_unifime;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mobiledev_unifime.model.Contact;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class ActivityContactDetail extends AppCompatActivity {
 
@@ -15,7 +19,7 @@ public class ActivityContactDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contact_view);
+        setContentView(R.layout.view_contact_frame);
 
         // Retrieve the contact object passed through the intent
         Contact contact = getIntent().getParcelableExtra("contact_data");
@@ -37,6 +41,27 @@ public class ActivityContactDetail extends AppCompatActivity {
         ImageView profilePicture = findViewById(R.id.contact_profilePicture);
         ImageView hamburgerMenu = findViewById(R.id.hamburger);
         ImageView instagramIcon = findViewById(R.id.instagram);
+        ImageView backButton = findViewById(R.id.backButton);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
+
+        // Set up ViewPager with adapter
+        AdapterContactTabViewPager adapter = new AdapterContactTabViewPager(this);
+        viewPager.setAdapter(adapter);
+
+        // Connect TabLayout with ViewPager2
+        new TabLayoutMediator(tabLayout, viewPager,
+                (tab, position) -> {
+                    switch (position) {
+                        case 0:
+                            tab.setText("Notes");
+                            break;
+                        case 1:
+                            tab.setText("Reminders");
+                            break;
+                    }
+                }).attach();
+
 
         // Bind data to views
         Log.d(TAG, "Binding contact: " + contact.getName());
@@ -52,6 +77,12 @@ public class ActivityContactDetail extends AppCompatActivity {
             Log.d(TAG, "Hamburger menu clicked");
             // TODO: Add menu functionality
         });
+
+        backButton.setOnClickListener(v ->{
+            Log.d("ContactDetail", "Back button clicked");
+            finish();
+        });
+
 
         // Instagram icon click listener
         instagramIcon.setOnClickListener(v -> {
