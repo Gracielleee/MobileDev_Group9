@@ -58,7 +58,7 @@
             android:layout_height="50dp"
             android:layout_gravity="end"
             android:layout_margin="10dp"
-            tools:srcCompat="@drawable/hamburger"></ImageView>
+            app:srcCompat="@drawable/hamburger"></ImageView>
 
         <LinearLayout
             android:layout_width="match_parent"

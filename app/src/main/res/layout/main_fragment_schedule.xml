@@ -208,7 +208,7 @@
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
-                                android:src="@drawable/calendar_icon_schedule"
+                                android:src="@drawable/calendar_ic"
                                 android:contentDescription="Date Icon" />
 
                             <TextView
@@ -232,7 +232,7 @@
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
-                                android:src="@drawable/time_icon_schedule"
+                                android:src="@drawable/clock_ic"
                                 android:contentDescription="Time Icon" />
 
                             <TextView
@@ -323,7 +323,7 @@
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
-                                android:src="@drawable/calendar_icon_schedule"
+                                android:src="@drawable/calendar_ic"
                                 android:contentDescription="Date Icon" />
 
                             <TextView
@@ -347,7 +347,7 @@
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
-                                android:src="@drawable/time_icon_schedule"
+                                android:src="@drawable/clock_ic"
                                 android:contentDescription="Time Icon" />
 
                             <TextView

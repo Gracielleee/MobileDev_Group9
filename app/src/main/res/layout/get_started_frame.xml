@@ -39,7 +39,7 @@
         android:id="@+id/button"
         android:layout_width="334dp"
         android:layout_height="64dp"
-        android:backgroundTint="#fd5755"
+        android:backgroundTint="@color/orange"
         android:fontFamily="@font/poppins_medium"
         android:text="Get Started"
         android:textColor="#FFFFFF"
