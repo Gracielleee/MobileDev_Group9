@@ -1,6 +1,8 @@
 package com.example.mobiledev_unifime;
 
 import android.content.Context;
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +51,7 @@ public class AdapterContactItem extends RecyclerView.Adapter<AdapterContactItem.
                 parent,
                 false
         );
-        return new ContactViewHolder(itemView);
+        return new ContactViewHolder(itemView, context);
     }
 
     @Override
@@ -59,7 +61,8 @@ public class AdapterContactItem extends RecyclerView.Adapter<AdapterContactItem.
 
         // Set onClickListener for the ImageButton
         holder.logButton.setOnClickListener(v -> {
-            Toast.makeText(context, "Connected with " + contact.getName() + " today  |  Undo?", Toast.LENGTH_SHORT).show();
+
+            holder.showLastInteractionToast("Connected with " + contact.getName() + " today", 4000);
         });
     }
 
@@ -71,11 +74,12 @@ public class AdapterContactItem extends RecyclerView.Adapter<AdapterContactItem.
     public static class ContactViewHolder extends RecyclerView.ViewHolder {
         private final TextView cardNameTextView;
         private final ImageView cardImageView;
-
         private final ImageButton logButton;
+        private final Context context;
 
-        public ContactViewHolder(@NonNull View itemView) {
+        public ContactViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
+            this.context = context;
             cardNameTextView = itemView.findViewById(R.id.contact_name);
             cardImageView = itemView.findViewById(R.id.contact_profilePicture);
             logButton = itemView.findViewById(R.id.log_btn);
@@ -90,6 +94,22 @@ public class AdapterContactItem extends RecyclerView.Adapter<AdapterContactItem.
                     listener.onContactClick(item);
                 }
             });
+        }
+
+        private void showLastInteractionToast(String message, int durationInMillis) {
+            LayoutInflater inflater = LayoutInflater.from(context);
+            View customView = inflater.inflate(R.layout.custom_last_interaction_log_layout, null);
+
+            TextView textView = customView.findViewById(R.id.message);
+            textView.setText(message);
+
+            Toast toast = new Toast(context);
+            toast.setView(customView);
+            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 150);
+            toast.show();
+
+            // Dismiss the Toast after the specified duration
+            new Handler().postDelayed(toast::cancel, durationInMillis);
         }
     }
 }
