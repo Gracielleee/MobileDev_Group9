@@ -35,11 +35,24 @@
                 android:id="@+id/notificationButton"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="15dp"
                 android:background="@android:color/transparent"
                 android:contentDescription="Notifications"
                 android:scaleType="fitCenter"
                 android:src="@drawable/white_notification"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/moreButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/moreButton"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Notifications"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dots_icon_btn"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -73,7 +86,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="120dp"
         app:srcCompat="@drawable/add_icon_btn3"
-        app:backgroundTint="@color/orange"
+        app:backgroundTint="@color/fab_color"
         app:layout_anchor="@id/nav_host_fragment"
         app:layout_anchorGravity="bottom|end" />
 

@@ -57,7 +57,7 @@
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="6dp"
                 android:text="This Week"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppins_medium" />
 
@@ -240,7 +240,7 @@
                             android:layout_height="20dp"
                             android:fontFamily="@font/poppins"
                             android:text="Last interaction is 1 month ago"
-                            android:textColor="#7A7A7A"
+                            android:textColor="#757575"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -293,7 +293,7 @@
                             android:layout_height="20dp"
                             android:text="Last interaction is 2 months ago"
                             android:textSize="12sp"
-                            android:textColor="#7A7A7A"
+                            android:textColor="#757575"
                             android:fontFamily="@font/poppins" />
                     </LinearLayout>
 
@@ -346,7 +346,7 @@
                             android:layout_height="20dp"
                             android:text="Last interaction is 3 months ago"
                             android:textSize="12sp"
-                            android:textColor="#7A7A7A"
+                            android:textColor="#757575"
                             android:fontFamily="@font/poppins" />
                     </LinearLayout>
 
@@ -399,7 +399,7 @@
                             android:layout_height="20dp"
                             android:text="Last interaction is 4 months ago"
                             android:textSize="12sp"
-                            android:textColor="#7A7A7A"
+                            android:textColor="#757575"
                             android:fontFamily="@font/poppins" />
                     </LinearLayout>
 
@@ -452,7 +452,7 @@
                             android:layout_height="20dp"
                             android:text="Last interaction is 5 months ago"
                             android:textSize="12sp"
-                            android:textColor="#7A7A7A"
+                            android:textColor="#757575"
                             android:fontFamily="@font/poppins" />
                     </LinearLayout>
 
@@ -506,7 +506,7 @@
                             android:layout_height="20dp"
                             android:text="Last interaction is 6 months ago"
                             android:textSize="12sp"
-                            android:textColor="#7A7A7A"
+                            android:textColor="#757575"
                             android:fontFamily="@font/poppins" />
                     </LinearLayout>
 
