@@ -118,6 +118,19 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/date_created"
+        android:paddingStart="0dp"
+        android:layout_alignStart="@id/tag_list"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="75dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date here"
+        android:textColor="#757575">
+
+    </TextView>
+
     <!-- Checkmark Button -->
     <ImageButton
         android:id="@+id/check_button"

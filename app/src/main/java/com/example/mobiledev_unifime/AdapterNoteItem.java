@@ -47,6 +47,8 @@ public class AdapterNoteItem extends RecyclerView.Adapter<AdapterNoteItem.NoteVi
             intent.putExtra("DESC", note.getDescription());
             intent.putExtra("IMAGE", note.getImageId());
             intent.putExtra("Tag", note.getTag());
+            intent.putExtra("Date", note.getDateCreated());
+            intent.putExtra("Contact", note.getContact());
             context.startActivity(intent);
         });
     }

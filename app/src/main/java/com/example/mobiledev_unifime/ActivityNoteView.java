@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobiledev_unifime.model.Contact;
 import com.google.android.material.snackbar.Snackbar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -25,7 +26,9 @@ public class ActivityNoteView extends AppCompatActivity {
     private EditText descriptionText;
     private CircleImageView contactImageView;
     private Button tagButton;
+    private TextView dateCreated;
     private int imageId;
+    private Contact contact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,10 @@ public class ActivityNoteView extends AppCompatActivity {
         backButton = findViewById(R.id.backButton);
         checkButton = findViewById(R.id.check_button);
         contactImageView = findViewById(R.id.linked_contact);
-        tagButton = findViewById(R.id.tag); // Initialize the Button
+        tagButton = findViewById(R.id.tag);
+        dateCreated = findViewById(R.id.date_created);
+        contact = getIntent().getParcelableExtra("Contact");
+
 
         // Get the intent that started this activity
         Intent intent = getIntent();
@@ -48,10 +54,12 @@ public class ActivityNoteView extends AppCompatActivity {
         String description = intent.getStringExtra("DESC");
         String tag = intent.getStringExtra("Tag");       // Get the tag string
         imageId = intent.getIntExtra("IMAGE", -1); // Default to -1 if not found
+        String date = intent.getStringExtra("Date");
 
         // Update UI with the data
         titleText.setText(title);
         descriptionText.setText(description);
+        dateCreated.setText(date);
 
         // Set the image if it exists
         if (imageId != -1) {
@@ -75,6 +83,19 @@ public class ActivityNoteView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showCustomGreenToast(v, "Saved",250);
+                finish();
+
+            }
+        });
+
+        //Set the Linked Contact Image Button logic
+        contactImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Pass the contact information to the activity
+                Intent intent = new Intent(ActivityNoteView.this, ActivityContactDetail.class);
+                intent.putExtra("contact_data", contact);
+                startActivity(intent);
                 finish();
 
             }

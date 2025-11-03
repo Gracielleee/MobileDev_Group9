@@ -8,13 +8,15 @@ public class Note {
     private String description;
     private int imageId;
     private String tag;
+    private String dateCreated;
 
-    public Note(Contact contact,  String title, String description, String tag) {
+    public Note(Contact contact,  String title, String description, String tag, String dateCreated) {
         this.contact = contact;
         this.description = description;
         this.imageId = contact.getImageId();
         this.tag = tag;
         this.title = title;
+        this.dateCreated = dateCreated;
     }
 
     public Contact getContact() {
@@ -55,6 +57,14 @@ public class Note {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(String dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }
 

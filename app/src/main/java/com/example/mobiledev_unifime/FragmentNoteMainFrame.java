@@ -45,15 +45,15 @@ public class FragmentNoteMainFrame extends Fragment {
 
         // Prepare  data
         noteList = new ArrayList<>();
-        noteList.add(new Note(allContacts.get(1), "Travel", "Antarctica, Korea, Japan", "Likes"));
-        noteList.add(new Note(allContacts.get(2), "Hobby", "Journaling, Sketching, Yoga", "Likes"));
-        noteList.add(new Note(allContacts.get(3), "Travel", "New Zealand, Palawan, Batanes", "Likes"));
-        noteList.add(new Note(allContacts.get(1), "Song", "Plays Multo everyday", "Likes"));
-        noteList.add(new Note(allContacts.get(3), "Hobby", "Knitting, Sketching, Yoga", "Likes"));
-        noteList.add(new Note(allContacts.get(0), "Food", "Potato, tomato, carrot", "Likes"));
-        noteList.add(new Note(allContacts.get(3), "Singers", "AURORA, Laufey, Beabadobee", "Likes"));
-        noteList.add(new Note(allContacts.get(0), "Song", "Cappuccino Assassino", "Dislikes"));
-        noteList.add(new Note(allContacts.get(2), "Singers", "Coldplay, OneRepublic", "Likes"));
+        noteList.add(new Note(allContacts.get(1), "Travel", "Antarctica, Korea, Japan", "Likes", "Date Created: Sep. 30, 2025"));
+        noteList.add(new Note(allContacts.get(2), "Hobby", "Journaling, Sketching, Yoga", "Likes", "Date Created: Dec. 30, 2025"));
+        noteList.add(new Note(allContacts.get(3), "Travel", "New Zealand, Palawan, Batanes", "Likes", "Date Created: Sep. 10, 2025"));
+        noteList.add(new Note(allContacts.get(1), "Song", "Plays Multo everyday", "Likes", "Date Created: Sep. 20, 2025"));
+        noteList.add(new Note(allContacts.get(3), "Hobby", "Knitting, Sketching, Yoga", "Likes", "Date Created: Jul. 20, 2025"));
+        noteList.add(new Note(allContacts.get(0), "Food", "Potato, tomato, carrot", "Likes", "Date Created: Jun. 18, 2025"));
+        noteList.add(new Note(allContacts.get(3), "Singers", "AURORA, Laufey, Beabadobee", "Likes", "Date Created: Oct. 11, 2025"));
+        noteList.add(new Note(allContacts.get(0), "Song", "Cappuccino Assassino", "Dislikes", "Date Created: Sep. 2, 2025"));
+        noteList.add(new Note(allContacts.get(2), "Singers", "Coldplay, OneRepublic", "Likes", "Date Created: Nov. 1, 2025"));
 
         // Set up the adapter
         adapter = new AdapterNoteItem(noteList, getContext());
