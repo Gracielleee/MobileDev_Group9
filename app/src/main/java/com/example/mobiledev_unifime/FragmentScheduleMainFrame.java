@@ -40,13 +40,13 @@ public class FragmentScheduleMainFrame extends Fragment {
         eventCardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getActivity(), ActivityReminderView.class);
-                intent1.putExtra("eventTitle", "Family Outing @ local beach");
-                intent1.putExtra("eventDate", "October 9, 2025");
-                intent1.putExtra("eventTime", "10 AM - 2 PM");
-                intent1.putExtra("contact1", R.drawable.kirby_flat);
-                intent1.putExtra("contact2", R.drawable.mikee);
-                intent1.putExtra("contact3", R.drawable.lolavic);
+                Intent intent1 = new Intent(getActivity(), ActivityReminderView2.class);
+                intent1.putExtra("eventTitle", "Birthday Gift");
+                intent1.putExtra("eventDate", "November 19, 2025");
+                intent1.putExtra("eventTime", "8 PM");
+                intent1.putExtra("contact1", R.drawable.lolavic);
+                intent1.putExtra("contact2", R.drawable.kirby_flat);
+                intent1.putExtra("contact3", R.drawable.mikee);
                 startActivity(intent1);
             }
         });
@@ -54,13 +54,13 @@ public class FragmentScheduleMainFrame extends Fragment {
         eventCardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(getActivity(), ActivityReminderView2.class);
-                intent2.putExtra("eventTitle", "Team Building @ resort");
-                intent2.putExtra("eventDate", "October 15, 2025");
-                intent2.putExtra("eventTime", "9 AM - 4 PM");
-                intent2.putExtra("contact1", R.drawable.brownie);
-                intent2.putExtra("contact2", R.drawable.kirby_flat);
-                intent2.putExtra("contact3", R.drawable.mikee);
+                Intent intent2 = new Intent(getActivity(), ActivityReminderView.class);
+                intent2.putExtra("eventTitle", "Family Outing @ local beach");
+                intent2.putExtra("eventDate", "October 9, 2025");
+                intent2.putExtra("eventTime", "10 AM - 2 PM");
+                intent2.putExtra("contact1", R.drawable.kirby_flat);
+                intent2.putExtra("contact2", R.drawable.mikee);
+                intent2.putExtra("contact3", R.drawable.lolavic);
                 startActivity(intent2);
             }
         });

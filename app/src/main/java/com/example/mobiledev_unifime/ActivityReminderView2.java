@@ -31,7 +31,7 @@ public class ActivityReminderView2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_reminder_frame);
+        setContentView(R.layout.view_reminder_frame2);
 
         // Initialize views
         backButton = findViewById(R.id.backButton);
@@ -42,8 +42,6 @@ public class ActivityReminderView2 extends AppCompatActivity {
         timeText = findViewById(R.id.time_txt_btn);
 
         contact1 = findViewById(R.id.contact_1);
-        contact2 = findViewById(R.id.contact_2);
-        contact3 = findViewById(R.id.contact_3);
 
         // Get the intent that started this activity
         Intent intent = getIntent();
@@ -53,8 +51,6 @@ public class ActivityReminderView2 extends AppCompatActivity {
         String eventDate = intent.getStringExtra("eventDate");
         String eventTime = intent.getStringExtra("eventTime");
         int contactImage1 = intent.getIntExtra("contact1", -1);
-        int contactImage2 = intent.getIntExtra("contact2", -1);
-        int contactImage3 = intent.getIntExtra("contact3", -1);
 
         // Update UI with the data
         titleText.setText(eventTitle);
@@ -65,12 +61,7 @@ public class ActivityReminderView2 extends AppCompatActivity {
         if (contactImage1 != -1) {
             contact1.setImageResource(contactImage1);
         }
-        if (contactImage2 != -1) {
-            contact2.setImageResource(contactImage2);
-        }
-        if (contactImage3 != -1) {
-            contact3.setImageResource(contactImage3);
-        }
+
 
         // Set the Back Button logic
         backButton.setOnClickListener(new View.OnClickListener() {

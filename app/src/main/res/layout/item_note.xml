@@ -36,13 +36,15 @@
 
         <TextView
             android:id="@+id/note_item_desc"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
             android:text="Potato, tomato, carrot"
             android:textColor="#444"
+            android:maxLines="2"
+            android:ellipsize="end"
             android:textSize="14sp" />
 
         <Button

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@android:color/white">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="60dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:contentDescription="Back button"
+        android:src="@drawable/arrow_back_black">
+
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/link_to"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_alignTop="@id/backButton"
+        android:layout_alignEnd="@id/linked_contacts_list"
+        android:layout_marginEnd="90dp"
+        android:text="Linked to"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:gravity="center_vertical"/>
+
+    <LinearLayout
+        android:id="@+id/linked_contacts_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/backButton"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/contact_1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/contactgroup_background"
+            android:src="@drawable/lolavic"/>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/link_to"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:hint="Title"
+        android:textColorHint="#757575"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:background="@android:color/transparent"/>
+
+    <ImageButton
+        android:id="@+id/more_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/linked_contacts_list"
+        android:layout_alignTop="@id/title"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:contentDescription="More button"
+        android:src="@drawable/dots_ic_black">
+
+    </ImageButton>
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="120dp"
+        android:layout_below="@id/title"
+        android:layout_alignStart="@+id/title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="23dp"
+        android:text="Look up lightweight ergonomic gardening tools as bday gift."
+        android:hint="text here..."
+        android:textColorHint="#757575"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:background="@android:color/transparent"/>
+
+    <Button
+        android:gravity="center_vertical"
+        android:id="@+id/date_txt_btn"
+        android:layout_alignBottom="@+id/time_txt_btn"
+        android:layout_alignLeft="@id/title"
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date :"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/calendar_ic"
+        android:drawablePadding="0dp"/>
+
+    <Button
+        android:gravity="center_vertical"
+        android:id="@+id/time_txt_btn"
+        android:layout_alignBottom="@+id/recurring_txt_btn"
+        android:layout_alignLeft="@id/title"
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time :"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/clock_ic"
+        android:drawablePadding="0dp"/>
+
+    <Button
+        android:gravity="center_vertical"
+        android:id="@+id/recurring_txt_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@id/title"
+        android:layout_marginBottom="125dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Never"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/reccuring_ic"
+        android:drawablePadding="0dp"/>
+
+    <!-- Checkmark Button -->
+    <Button
+        android:id="@+id/check_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_green"
+        android:drawableLeft="@drawable/check_wcircle_ic"
+        android:text="Complete"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:padding="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"/>
+
+</RelativeLayout>
