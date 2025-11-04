@@ -143,7 +143,7 @@ MobileDev_Group9/
     <td align="center">
       <img src="https://avatars.githubusercontent.com/u/158192154?v=4" width="100px" alt=""/><br />
       <b>Gyabu</b><br />
-      <a href="https://https://github.com/Gyabu">GitHub</a>
+      <a href="https://github.com/Gyabu">GitHub</a>
     </td>
   </tr>
 </table>
