@@ -15,6 +15,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class ActivityContactDetail extends AppCompatActivity {
 
     private static final String TAG = "ContactDetailActivity";
+    private Contact contact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class ActivityContactDetail extends AppCompatActivity {
         ViewPager2 viewPager = findViewById(R.id.viewPager);
 
         // Set up ViewPager with adapter
-        AdapterContactTabViewPager adapter = new AdapterContactTabViewPager(this);
+        AdapterContactTabViewPager adapter = new AdapterContactTabViewPager(this, contact);
         viewPager.setAdapter(adapter);
 
         // Connect TabLayout with ViewPager2

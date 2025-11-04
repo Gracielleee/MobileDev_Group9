@@ -17,10 +17,12 @@
         android:id="@+id/eventCard1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginHorizontal="24dp"
         app:cardCornerRadius="18dp"
-        app:cardElevation="6dp">
+        app:cardElevation="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,18 +40,122 @@
                 android:layout_marginEnd="12dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ev2_contact_1"
+                    android:layout_width="34dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/lolavic" />
+
+
+            </LinearLayout>
+
+            <!-- RIGHT: Event info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/eventTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Birthday Gift"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_medium" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/calendar_ic"
+                        android:contentDescription="Date Icon" />
+
+                    <TextView
+                        android:id="@+id/eventDate2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="November 19, 2025"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/clock_ic"
+                        android:contentDescription="Time Icon" />
+
+                    <TextView
+                        android:id="@+id/eventTime2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="8 PM"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Upcoming Event 2 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/eventCard2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="24dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- LEFT: Participants -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/ev1_contact_1"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/brownie"
-                    android:layout_marginEnd="-10dp" />
+                    android:layout_marginEnd="-10dp"
+                    android:src="@drawable/brownie" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/ev1_contact_2"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/mikee"
-                    android:layout_marginEnd="-10dp" />
+                    android:layout_marginEnd="-10dp"
+                    android:src="@drawable/tita_baby" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/ev1_contact_3"
@@ -77,162 +183,49 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="6dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
-                        android:src="@drawable/calendar_ic"
-                        android:contentDescription="Date Icon" />
+                        android:contentDescription="Date Icon"
+                        android:src="@drawable/calendar_ic" />
 
                     <TextView
                         android:id="@+id/eventDate1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        android:text="October 9, 2025"
+                        android:fontFamily="@font/poppins"
+                        android:text="December 10, 2025"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/poppins" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="2dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
-                        android:src="@drawable/clock_ic"
-                        android:contentDescription="Time Icon" />
+                        android:contentDescription="Time Icon"
+                        android:src="@drawable/clock_ic" />
 
                     <TextView
                         android:id="@+id/eventTime1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        android:text="10 AM - 2 PM"
+                        android:fontFamily="@font/poppins"
+                        android:text="10 AM"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/poppins" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Upcoming Event 2 -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/eventCard2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="24dp"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="6dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical"
-            android:background="@color/white">
-
-            <!-- LEFT: Participants -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginEnd="12dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/ev2_contact_1"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginEnd="-10dp"
-                    android:src="@drawable/brownie" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/ev2_contact_2"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/kirby_flat"
-                    android:layout_marginEnd="-10dp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/ev2_contact_3"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/mikee" />
-            </LinearLayout>
-
-            <!-- RIGHT: Event info -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/eventTitle2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Team Building @ resort"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/poppins_medium" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="6dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/calendar_ic"
-                        android:contentDescription="Date Icon" />
-
-                    <TextView
-                        android:id="@+id/eventDate2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:text="October 15, 2025"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/poppins" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/clock_ic"
-                        android:contentDescription="Time Icon" />
-
-                    <TextView
-                        android:id="@+id/eventTime2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:text="9 AM - 4 PM"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/poppins" />
+                        android:textSize="13sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

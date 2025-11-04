@@ -125,8 +125,7 @@ public class FragmentContactsMainFrame extends Fragment {
 
     public static List<Contact> createContacts() {
         List<Contact> contacts = new ArrayList<>();
-        contacts.add(new Contact("Brownie", R.drawable.brownie, ContactGroup.FAMILY, "October 9, 2002", "Foodie"));
-        contacts.add(new Contact("Lola Vic", R.drawable.lolavic, ContactGroup.FAMILY, "July 5, 1940", "Dancer"));
+        contacts.add(new Contact("Lola Vic", R.drawable.lolavic, ContactGroup.FAMILY, "November 30, 1940", "Dancer"));
         contacts.add(new Contact("Kirby", R.drawable.kirby_flat, ContactGroup.CHURCH, "December 25, 1999", "Church member"));
         contacts.add(new Contact("Mikee", R.drawable.mikee, ContactGroup.HIKING, "February 3, 2000", "Adventure seeker"));
 
@@ -134,7 +133,7 @@ public class FragmentContactsMainFrame extends Fragment {
         contacts.add(new Contact("Mai-Mai", R.drawable.smiski, ContactGroup.SCHOOL, "November 11, 2003", "Future Android Developer"));
         contacts.add(new Contact("Tita Baby", R.drawable.tita_baby, ContactGroup.FAMILY, "September 4, 1985", "Lola's cousin"));
         contacts.add(new Contact("Luzviminda", R.drawable.labubu, ContactGroup.PROVINCE, "June 30, 2003", "Labubu enjoyer"));
-
+        contacts.add(new Contact("Brownie", R.drawable.brownie, ContactGroup.FAMILY, "October 9, 2002", "Foodie"));
         Log.d("Contacts", "Created contacts: " + contacts.size());
 
         for (Contact contact : contacts) {

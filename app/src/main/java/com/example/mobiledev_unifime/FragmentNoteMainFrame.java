@@ -5,14 +5,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.mobiledev_unifime.model.Contact;
 import com.example.mobiledev_unifime.model.Note;
@@ -31,7 +29,7 @@ public class FragmentNoteMainFrame extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_main_fragment_notes, container, false);
+        View view = inflater.inflate(R.layout.main_fragment_notes, container, false);
 
         // Initialize RecyclerView
         recyclerView = view.findViewById(R.id.recyclerView_notes);
@@ -45,15 +43,15 @@ public class FragmentNoteMainFrame extends Fragment {
 
         // Prepare  data
         noteList = new ArrayList<>();
-        noteList.add(new Note(allContacts.get(1), "Travel", "Antarctica, Korea, Japan", "Likes"));
-        noteList.add(new Note(allContacts.get(2), "Hobby", "Journaling, Sketching, Yoga", "Likes"));
-        noteList.add(new Note(allContacts.get(3), "Travel", "New Zealand, Palawan, Batanes", "Likes"));
-        noteList.add(new Note(allContacts.get(1), "Song", "Plays Multo everyday", "Likes"));
-        noteList.add(new Note(allContacts.get(3), "Hobby", "Knitting, Sketching, Yoga", "Likes"));
-        noteList.add(new Note(allContacts.get(0), "Food", "Potato, tomato, carrot", "Likes"));
-        noteList.add(new Note(allContacts.get(3), "Singers", "AURORA, Laufey, Beabadobee", "Likes"));
-        noteList.add(new Note(allContacts.get(0), "Song", "Cappuccino Assassino", "Dislikes"));
-        noteList.add(new Note(allContacts.get(2), "Singers", "Coldplay, OneRepublic", "Likes"));
+        noteList.add(new Note(allContacts.get(0), "Gardening", "Lola called — started gardening; tool hurts her hands. Gift idea: lightweight, ergonomic gardening tools", "Gift", "Date Created: Nov. 03, 2025"));
+        noteList.add(new Note(allContacts.get(2), "Hobby", "Journaling, Sketching, Yoga", "Likes", "Date Created: Dec. 30, 2024"));
+        noteList.add(new Note(allContacts.get(0), "Travel", "Antarctica, Korea, Japan", "Likes", "Date Created: Sep. 30, 2025"));
+        noteList.add(new Note(allContacts.get(2), "Pets", "cat gave birth to 3 orange kittens", "Pets", "Date Created: Oct. 10, 2025"));
+        noteList.add(new Note(allContacts.get(1), "Food", "Potato, tomato, carrot", "Likes", "Date Created: Jun. 18, 2025"));
+        noteList.add(new Note(allContacts.get(3), "Singers", "AURORA, Laufey, Beabadobee", "Likes", "Date Created: Oct. 11, 2025"));
+        noteList.add(new Note(allContacts.get(1), "Song", "Cappuccino Assassino", "Dislikes", "Date Created: Sep. 2, 2025"));
+        noteList.add(new Note(allContacts.get(2), "Singers", "Coldplay, OneRepublic", "Likes", "Date Created: Nov. 1, 2025"));
+        noteList.add(new Note(allContacts.get(3), "Travel", "New Zealand, Palawan, Batanes", "Likes", "Date Created: Sep. 10, 2025"));
 
         // Set up the adapter
         adapter = new AdapterNoteItem(noteList, getContext());
